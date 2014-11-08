@@ -1,0 +1,21 @@
+{
+  "name": "voto",
+  "plural": "votos",
+  "base": "PersistedModel",
+  "properties": {
+    "usuario": {
+      "type": "string",
+      "required": true
+    },
+    "creado": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [],
+  "methods": []
+}

@@ -1,0 +1,21 @@
+{
+  "name": "relationTag",
+  "plural": "relationTags",
+  "base": "PersistedModel",
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "piropo": {
+      "type": "belongsTo",
+      "model": "piropo",
+      "foreignKey": "piropoId"
+    },
+    "tag": {
+      "type": "belongsTo",
+      "model": "tag",
+      "foreignKey": "tagId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

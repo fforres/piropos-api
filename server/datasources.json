@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongodb": {
+    "host": "ds051720.mongolab.com",
+    "port": 51720,
+    "database": "piropos",
+    "username": "forres",
+    "password": "piropos",
+    "name": "mongodb",
+    "connector": "mongodb"
+  }
+}

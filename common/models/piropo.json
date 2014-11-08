@@ -1,0 +1,49 @@
+{
+  "name": "piropo",
+  "plural": "piropos",
+  "base": "PersistedModel",
+  "hidden": [
+    "_scopeMeta"
+  ],
+  "properties": {
+    "creado": {
+      "type": "date",
+      "required": false
+    },
+    "texto": {
+      "type": "string",
+      "required": true
+    },
+    "usuario": {
+      "type": "string",
+      "required": true
+    },
+    "votoAFavor": {
+      "type": "number"
+    },
+    "votoEnContra": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "votos": {
+      "type": "hasMany",
+      "model": "voto",
+      "foreignKey": "piropoId"
+    },
+    "categoria": {
+      "type": "hasOne",
+      "model": "categoria",
+      "foreignKey": ""
+    },
+    "tag": {
+      "type": "hasMany",
+      "model": "tag",
+      "foreignKey": "tagId",
+      "through": "relationTag"
+    }
+  },
+  "acls": [],
+  "methods": []
+}

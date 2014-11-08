@@ -1,0 +1,50 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ]
+  },
+  "User": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "AccessToken": {
+    "dataSource": "mongodb",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongodb",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongodb",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongodb",
+    "public": false
+  },
+  "piropo": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "voto": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "categoria": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "tag": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "relationTag": {
+    "dataSource": "mongodb",
+    "public": true
+  }
+}

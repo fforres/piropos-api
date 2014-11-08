@@ -1,0 +1,22 @@
+{
+  "name": "tag",
+  "plural": "tags",
+  "base": "PersistedModel",
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "piropo": {
+      "type": "hasMany",
+      "model": "piropo",
+      "foreignKey": "piropoId",
+      "through": "relationTag"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
