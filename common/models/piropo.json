@@ -18,13 +18,26 @@
       "type": "string",
       "required": true
     },
+    "seo": {
+      "type": "string"
+    },
+    "seoencoded": {
+      "type": "string"
+    },
     "votoAFavor": {
       "type": "number"
     },
-    "votoEnContra": {
+    "votoEnContra": { 
       "type": "number"
+    },
+    "votoTotal":{
+    	"type":"number"
     }
   },
+  "hidden": [
+    "asd",
+    "asd"
+  ],
   "validations": [],
   "relations": {
     "votos": {

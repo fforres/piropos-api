@@ -1,39 +1,44 @@
 module.exports = function(Piropo) {
-	Piropo.prototype.votoAFavor = function(cb) {
-		console.log("this")
-		console.log(this)
+
+	Piropo.prototype.addVotoAFavor = function(cb) {
 		this.votoAFavor = this.votoAFavor + 1;
+		this.votoTotal = this.votoAFavor - this.votoEnContra
+		this.updateAttributes(this,function(err,data){
+			cb(null,data);
+		})
 	};
-	Piropo.prototype.votoEnContra = function(cb) {
-		console.log("this")
-		console.log(this)
+
+	Piropo.prototype.addVotoEnContra = function(cb) {
 		this.votoEnContra = this.votoEnContra + 1;
+		this.votoTotal = this.votoAFavor - this.votoEnContra
+		this.updateAttributes(this,function(err,data){
+			cb(null,data);
+		})
 	};
-	Piropo.remoteMethod('votoAFavor', {
+	
+	Piropo.remoteMethod('addVotoAFavor', {
 		isStatic: false,
 		accepts: [],
 		returns: {
 			arg: 'msg',
 			type: 'string'
 		}
-	});
-	Piropo.remoteMethod('votoEnContra', {
+	}); 
+	Piropo.remoteMethod('addVotoEnContra', {
 		isStatic: false,
 		accepts: [],
 		returns: {
 			arg: 'msg',
 			type: 'string'
-		},
-		http: {
-			verb: 'get',
-			path: '/votoEnContra'
 		}
 	});
 	
 	Piropo.beforeRemote('create', function(ctx, piropo, next) {
 		ctx.args.data.creado = new Date();
-		ctx.args.data.votoAFavor = 0;
-		ctx.args.data.votoEnContra = 0;
+		ctx.args.data.votoAFavor = ctx.args.data.votoEnContra = ctx.args.data.votoTotal=0;
+		var texto = ctx.args.data.texto.trim().replace("\n", "").split(" ").join("-");
+		ctx.args.data.seoencoded = encodeURIComponent(texto).replace(/'/g,"%27").replace(/"/g,"%22")
+		ctx.args.data.seo = texto
 		next();
 	});
 };
