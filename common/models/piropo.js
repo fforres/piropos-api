@@ -1,5 +1,5 @@
 module.exports = function(Piropo) {
-
+	
 	Piropo.prototype.addVotoAFavor = function(cb) {
 		this.votoAFavor = this.votoAFavor + 1;
 		this.votoTotal = this.votoAFavor - this.votoEnContra
@@ -29,9 +29,9 @@ module.exports = function(Piropo) {
 		accepts: [],
 		returns: {
 			arg: 'msg',
-			type: 'string'
+			type: 'string' 
 		}
-	});
+	});   
 	
 	Piropo.beforeRemote('create', function(ctx, piropo, next) {
 		ctx.args.data.creado = new Date();
@@ -41,4 +41,9 @@ module.exports = function(Piropo) {
 		ctx.args.data.seo = texto
 		next();
 	});
+	
+	
+	var delPrototipo = false;
+	var remoto = true;
+	
 };
