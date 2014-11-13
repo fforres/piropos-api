@@ -101,7 +101,7 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "create"
-    },
+    }
     
    
   ],
