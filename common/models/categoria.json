@@ -2,6 +2,7 @@
   "name": "categoria",
   "plural": "categorias",
   "base": "PersistedModel",
+  "idInjection": true,
   "properties": {
     "nombre": {
       "type": "string",
